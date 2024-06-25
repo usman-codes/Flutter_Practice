@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/count_example.dart';
+import 'package:flutter_practice/muti_example.dart';
 import 'package:flutter_practice/provider/count_provider.dart';
+import 'package:flutter_practice/provider/multi_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,8 +15,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => Countprovider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Countprovider()),
+        ChangeNotifierProvider(create: (_) => multiProvider()),
+      ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: exmple_count()),
+          home: MutiExample()),
     );
   }
 }
