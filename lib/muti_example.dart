@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/favourite_app.dart';
 import 'package:flutter_practice/provider/multi_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +18,7 @@ class _MutiExampleState extends State<MutiExample> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Multi-Provider"),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +61,19 @@ class _MutiExampleState extends State<MutiExample> {
                 ],
               );
             },
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            child: const Text(
+              'Multi_Provider screen',
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => favor()));
+            },
+          ),
         ],
       ),
     );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/count_example.dart';
+import 'package:flutter_practice/favourite_app.dart';
 import 'package:flutter_practice/muti_example.dart';
 import 'package:flutter_practice/provider/count_provider.dart';
+import 'package:flutter_practice/provider/favour_provider.dart';
 import 'package:flutter_practice/provider/multi_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => Countprovider()),
         ChangeNotifierProvider(create: (_) => multiProvider()),
+        ChangeNotifierProvider(create: (_) => favour_provider()),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: MutiExample()),
+          home: exmple_count()),
     );
   }
 }
