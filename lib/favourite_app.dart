@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/provider/favour_provider.dart';
+import 'package:flutter_practice/theme_change.dart';
 import 'package:provider/provider.dart';
 
 class favor extends StatefulWidget {
@@ -17,6 +18,18 @@ class _favorState extends State<favor> {
       appBar: AppBar(
         title: Text("Favourite App"),
         backgroundColor: Colors.blueAccent,
+        actions: [
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => theme_change()));
+            },
+            child: Icon(Icons.forward),
+          ),
+          SizedBox(
+            width: 30,
+          )
+        ],
       ),
       body: Column(
         children: [
